@@ -12,3 +12,8 @@ easier then a normal standard jdbc connection, not to mention i wont have to kee
 
 If anyone out there is actually viewing this, I hope you try to make a similar application as well, it teaches you the 
 basics of enterprise development in Java and gives a deeper meaning when we use Spring Boot.
+
+Functionality (so far) - 
+
+Home Page - A List of all current Customers, add button to lead to form page to add new customer
+![screenshot 6](https://user-images.githubusercontent.com/16232033/39970617-9d89ee7e-56bc-11e8-9af9-c694a098387a.png)
