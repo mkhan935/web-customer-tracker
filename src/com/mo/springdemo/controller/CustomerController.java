@@ -6,7 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.mo.springdemo.dao.CustomerDAO;
 import com.mo.springdemo.entity.Customer;
@@ -30,5 +33,31 @@ public class CustomerController {
 		//send to view
 		return "list-customers"; //this returns "list-customer.jsp"
 	}
+	
+	@GetMapping("/showFormForAdd")
+	public String showFormForAdd(Model testModel2) {
+		//create model to bind data to
+		Customer aCustomer = new Customer();
+		testModel2.addAttribute("customer", aCustomer);
+		
+		return "customer-form";
+	}
 
+	@PostMapping("/saveCustomer")
+	public String saveCustomer(@ModelAttribute("customer")Customer aCustomer) {
+		// save the customer
+		customerService.saveCustomer(aCustomer);
+		
+		return "redirect:/customer/list";
+	}
+	
+	@GetMapping("/showFormForUpdate")
+	public String showFormForUpdate(@RequestParam("customerId") int theId, Model testModel3) {
+		//get customer from service
+		Customer aCustomer = customerService.getCustomers(theId);
+		//set model as the customer retrieved
+		testModel3.addAttribute("customer",aCustomer);
+		//send it to the form to pre-populate the form
+		return "customer-form";
+	}
 }

@@ -6,4 +6,8 @@ import com.mo.springdemo.entity.Customer;
 
 public interface CustomerService {
 	public List<Customer> getCustomers();
+
+	public void saveCustomer(Customer aCustomer);
+
+	public Customer getCustomers(int theId);
 }
