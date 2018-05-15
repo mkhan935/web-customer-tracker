@@ -20,3 +20,12 @@ Home Page - A List of all current Customers, add button to lead to form page to 
 when you click on add, you go to this form, which you fill out accordingly, then hit save and you should have a new customer added.
 ![screenshot 9](https://user-images.githubusercontent.com/16232033/39972974-1438b652-56e7-11e8-933a-93298d7d7a8b.png)
 
+Added a Delete link, it will prompt user if they want to delete, used some js for that, if they hit ok, it will delete the customer
+![screenshot 10](https://user-images.githubusercontent.com/16232033/40034705-19806d18-57cc-11e8-9acd-b56191866d96.png)
+
+Also added search, you can search by first name/last name, if you hit enter on blank you just get the normal list of all customers
+![screenshot 11](https://user-images.githubusercontent.com/16232033/40034706-198c691a-57cc-11e8-95a5-a4e59b08f3b8.png)
+
+with that I think i'm done with just practicing mvc, moving on to practice boot, you know what they say, practice makes you perfect!
+
+might convert this all into a rest api one of these days and add some exception handling, its causing me to freak out when i see my code without try catch blocks.
